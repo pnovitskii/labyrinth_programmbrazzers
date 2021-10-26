@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <SFML\Graphics.hpp>
-
+#include "cell.h"
 using namespace std;
 
 int main()
