@@ -139,8 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="labyrinth_programmbrazzers.cpp" />
     <ClCompile Include="cell.cpp" />
+    <ClCompile Include="labyrinth_programmbrazzers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.h" />

@@ -7,5 +7,9 @@ class Cell
 	Vector2i position;
 	Sprite sprite;
 public:
-	void setSprite(Texture texture);
+	Cell(int x, int y)
+	{
+		position = { x, y };
+	}
+	void setTexture(Texture texture);
 };
