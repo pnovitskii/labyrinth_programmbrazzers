@@ -4,7 +4,4 @@
 using namespace std;
 using namespace sf;
 
-void Cell::setTexture(Texture texture)
-{
-	sprite.setTexture(texture);
-}
+

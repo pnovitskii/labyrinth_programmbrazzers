@@ -7,9 +7,9 @@ class Cell
 	Vector2i position;
 	Sprite sprite;
 public:
-	Cell(int x, int y)
+	Cell(int x, int y, Texture texture)
 	{
 		position = { x, y };
+		sprite.setTexture(texture);
 	}
-	void setTexture(Texture texture);
 };
