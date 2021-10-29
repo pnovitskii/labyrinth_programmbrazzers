@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(810, 610), "Labyrinth");
-    Texture background;
-    background.loadFromFile("graphics/background.png");
-    Sprite background_sprite(background);
+    Texture background_texture;
+    background_texture.loadFromFile("graphics/background.png");
+    Sprite background_sprite(background_texture);
     background_sprite.setPosition(0, 0);
     while (window.isOpen())
     {
