@@ -3,36 +3,23 @@
 
 #include <iostream>
 #include <SFML\Graphics.hpp>
-#include "field.h"
+#include "controller.h"
 using namespace std;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(810, 610), "Labyrinth");
+    Controller a;
 
-    Texture background_texture;
-    background_texture.loadFromFile("graphics/background.png");
-    Sprite background_sprite(background_texture);
-    background_sprite.setPosition(0, 0);
-
-    Field field;
-    
-    while (window.isOpen())
+    while (a.status())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (a.window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                window.close();
+                a.window.close();
         }
 
-        window.clear(Color::White);
-
-        window.draw(background_sprite);
-
-        field.draw(window);
-        
-        window.display();
+        a.draw();
     }
     return 0;
 }

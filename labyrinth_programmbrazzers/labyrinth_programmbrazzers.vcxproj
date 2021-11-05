@@ -140,11 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp" />
+    <ClCompile Include="controller.cpp" />
+    <ClCompile Include="crawler.cpp" />
     <ClCompile Include="field.cpp" />
     <ClCompile Include="labyrinth_programmbrazzers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.h" />
+    <ClInclude Include="controller.h" />
+    <ClInclude Include="crawler.h" />
     <ClInclude Include="field.h" />
   </ItemGroup>
   <ItemGroup>
