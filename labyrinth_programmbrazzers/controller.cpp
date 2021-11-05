@@ -21,6 +21,7 @@ void Controller::draw()
 	window.clear(Color::White);
 	window.draw(background_sprite);
 	field.draw(window);
+	window.draw(crawler.head_s);
 	window.display();
 }
 
