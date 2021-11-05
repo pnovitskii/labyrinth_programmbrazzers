@@ -20,5 +20,16 @@ void Controller::draw()
 {
 	window.clear(Color::White);
 	window.draw(background_sprite);
+	field.draw(window);
 	window.display();
 }
+
+void Controller::updateCrawler()
+{
+	if (field.matrix[crawler.position.x][crawler.position.y].path == false)
+	{
+		field.setPath(crawler.position.x, crawler.position.y);
+	}
+}
+
+

@@ -21,10 +21,11 @@ public:
 		{
 			for (int j = 0; j < 81; j++)
 			{
-				//matrix[i][j].sprite.setTexture(path_t);
+				
 				matrix[i][j].sprite.setPosition(j * 10, i * 10);
 			}
 		}
 	}
 	void draw(RenderWindow& window);
+	void setPath(int x, int y);
 };

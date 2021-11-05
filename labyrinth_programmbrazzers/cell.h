@@ -8,6 +8,7 @@ public:
 	Texture texture;
 public:
 	Sprite sprite;
+	bool path = false;
 	Cell(){}
 	Cell(int x, int y)
 	{
