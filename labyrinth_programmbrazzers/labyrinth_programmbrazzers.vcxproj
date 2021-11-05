@@ -140,10 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp" />
+    <ClCompile Include="field.cpp" />
     <ClCompile Include="labyrinth_programmbrazzers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.h" />
+    <ClInclude Include="field.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

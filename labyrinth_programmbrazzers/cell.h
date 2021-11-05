@@ -4,12 +4,17 @@ using namespace std;
 using namespace sf;
 class Cell
 {
-	Vector2i position;
-	Sprite sprite;
 public:
-	Cell(int x, int y, Texture texture)
+	Texture texture;
+public:
+	Sprite sprite;
+	Cell(){}
+	Cell(int x, int y)
 	{
-		position = { x, y };
-		sprite.setTexture(texture);
+		
+		sprite.setPosition(x * 10, y * 10);
+		
 	}
+//public:
+	void init(int x, int y);
 };
