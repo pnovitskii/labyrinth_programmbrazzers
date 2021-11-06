@@ -10,6 +10,7 @@ Crawler::Crawler()
 
 void Crawler::moveUp()
 {
+	
 	position.x--;
 	updateHead();
 }
@@ -36,3 +37,4 @@ void Crawler::updateHead()
 {
 	head_s.setPosition((float)position.y * 10, (float)position.x * 10);
 }
+

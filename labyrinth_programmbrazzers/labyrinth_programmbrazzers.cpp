@@ -18,20 +18,26 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 a.window.close();
-            if (event.type == Event::KeyReleased)
+            if (event.type == Event::KeyPressed)
             {
                 if (event.key.code == Keyboard::W)
-                    a.crawler.moveUp();
+                    a.moveCrawler({ -1, 0 });
+                    //a.crawler.moveUp();
                 if (event.key.code == Keyboard::A)
-                    a.crawler.moveLeft();
+                    a.moveCrawler({ 0, -1 });
+                    //a.crawler.moveLeft();
                 if (event.key.code == Keyboard::S)
-                    a.crawler.moveDown();
+                    a.moveCrawler({ 1, 0 });
+                    //a.crawler.moveDown();
                 if (event.key.code == Keyboard::D)
-                    a.crawler.moveRight();
+                    a.moveCrawler({ 0, 1 });
+                    //a.crawler.moveRight();
             }
         }
         
             
+        
+        //a.moveCrawler();
         a.updateCrawler();
         a.draw();
     }

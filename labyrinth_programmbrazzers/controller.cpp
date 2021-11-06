@@ -33,4 +33,32 @@ void Controller::updateCrawler()
 	}
 }
 
+void Controller::moveCrawler(Vector2i dir)
+{
+	Vector2i pos = crawler.position;
+	int newX = pos.x + dir.x;
+	int newY = pos.y + dir.y;
+	if (newX == 59 && newY == 80)
+		exit();
+	if (!(newX > 0 && newX < 60 && newY > 0 && newY < 80))
+	{
+		dir = { 0, 0 };
+		return;
+	}
+	if (dir.y == 1)
+		crawler.moveRight();
+	else if (dir.y == -1)
+		crawler.moveLeft();
+	else if (dir.x == 1)
+		crawler.moveDown();
+	else if (dir.x == -1)
+		crawler.moveUp();
+	dir = { 0, 0 };
+}
+
+void Controller::exit()
+{
+	window.close();
+}
+
 

@@ -9,6 +9,7 @@ public:
 public:
 	Sprite sprite;
 	bool path = false;
+	bool wall = false;
 	Cell(){}
 	Cell(int x, int y)
 	{
