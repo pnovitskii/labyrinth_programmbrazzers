@@ -13,9 +13,7 @@ public:
 	Cell(){}
 	Cell(int x, int y)
 	{
-		
 		sprite.setPosition(x * 10, y * 10);
-		
 	}
 //public:
 	void init(int x, int y);
