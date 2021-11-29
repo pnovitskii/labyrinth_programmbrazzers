@@ -4,8 +4,7 @@ using namespace std;
 using namespace sf;
 class Cell
 {
-
-private:
+public:
 	Texture texture;
 public:
 	Sprite sprite;
