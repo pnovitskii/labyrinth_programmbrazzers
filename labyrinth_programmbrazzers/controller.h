@@ -2,13 +2,15 @@
 #include <SFML/Graphics.hpp>
 #include "field.h"
 #include "crawler.h"
+#include <iostream>
+using namespace std;
 class Controller
 {
 public:
 	RenderWindow window;
 	Field field;
-	Texture background_texture;
-	Sprite background_sprite;
+	
+	
 	Crawler crawler;
 	//Vector2i dir = { 0, 0 };
 	//moveDir dir = idle;
@@ -19,5 +21,5 @@ public:
 	void draw();
 	void updateCrawler();
 	//void setDir(Vector2i d);
-	void moveCrawler(Vector2i dir);
+	bool moveCrawler(Vector2i dir);
 };

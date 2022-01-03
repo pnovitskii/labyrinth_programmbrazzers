@@ -4,16 +4,30 @@
 #include <iostream>
 #include <SFML\Graphics.hpp>
 #include "controller.h"
-
+#include <time.h>
+#include <cstdlib>
 using namespace std;
-
+int dx = 1;
+int dy = 0;
+Vector2i cases[2][4] = 
+{ 
+    {{0, 1}, {1, 0}, {0, -1}, {-1, 0} },
+    {{-1, 0}, {1, 0}, {0, 1}, {0, -1} }
+};
+int k = 0;
+Vector2i d  = {  1, 0 };
+Vector2i db = { -1, 0 };
 int main()
 {
+    srand(time(NULL));
     Controller a;
     
+    Clock clock;
     while (a.status())
     {
+        Time time = clock.restart();
         sf::Event event;
+        int counter = 0;
         while (a.window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -32,6 +46,43 @@ int main()
                 if (event.key.code == Keyboard::D)
                     a.moveCrawler({ 0, 1 });
                     //a.crawler.moveRight();
+                if (event.key.code == Keyboard::Space) 
+                {
+                    //  1  0 down
+                    // -1  0 up
+                    //  0 -1 left
+                    //  0  1 right
+                    for (int i = 0; i < 100000/2; i++)
+                    {
+                        d = cases[0][rand() % 5];
+                        a.moveCrawler(d);
+                        a.updateCrawler();
+                    }
+                    /*if (a.moveCrawler(d))
+                    {
+                        
+                        if (k == 0)
+                            k = rand() % 5;
+                        counter++;
+                        if (counter > 10)
+                        {
+                            counter = 0;
+                            k--;
+                        }
+                    }
+                    else if (!a.moveCrawler(d))
+                    {
+                        k = (k+1) % 5;
+                        d = cases[0][k];
+                        
+                    }*/
+                    
+                    //if (a.moveCrawler({ dx, dy }) || (dx == 0 && dy == 0))
+                    //{
+                    //    dx = rand() % 3 - 1;
+                    //    dy = rand() % 3 - 1;
+                    //}
+                }
             }
         }
         
@@ -40,6 +91,8 @@ int main()
         //a.moveCrawler();
         a.updateCrawler();
         a.draw();
+        //cout << a.field.matrix[a.crawler.position.x][a.crawler.position.y].wall << endl;
+        
     }
     return 0;
 }

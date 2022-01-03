@@ -8,7 +8,9 @@ class Field
 public:
 	Cell** matrix;
 	Texture path_t;
-	
+	Image background_image;
+	Texture background_texture;
+	Sprite background_sprite;
 public:
 
 	Field();

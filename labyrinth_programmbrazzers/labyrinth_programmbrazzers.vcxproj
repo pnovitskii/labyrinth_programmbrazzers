@@ -90,9 +90,10 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -145,12 +146,14 @@
     <ClCompile Include="crawler.cpp" />
     <ClCompile Include="field.cpp" />
     <ClCompile Include="labyrinth_programmbrazzers.cpp" />
+    <ClCompile Include="left_hand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="crawler.h" />
     <ClInclude Include="field.h" />
+    <ClInclude Include="left_hand.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

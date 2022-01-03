@@ -3,9 +3,7 @@
 Controller::Controller()
 {
 	window.create(VideoMode(810, 610), "Labyrinth");
-	background_texture.loadFromFile("graphics/background.png");
-	background_sprite.setTexture(background_texture);
-	background_sprite.setPosition(0, 0);
+	field.initWalls();
 }
 void Controller::update()
 {
@@ -19,7 +17,7 @@ bool Controller::status()
 void Controller::draw()
 {
 	window.clear(Color::White);
-	window.draw(background_sprite);
+	window.draw(field.background_sprite);
 	field.draw(window);
 	window.draw(crawler.head_s);
 	window.display();
@@ -33,18 +31,21 @@ void Controller::updateCrawler()
 	}
 }
 
-void Controller::moveCrawler(Vector2i dir)
+bool Controller::moveCrawler(Vector2i dir)
 {
 	Vector2i pos = crawler.position;
+	//cout << field.matrix[pos.x][pos.y].wall << endl;
 	int newX = pos.x + dir.x;
 	int newY = pos.y + dir.y;
 	if (newX == 59 && newY == 80)
 		exit();
-	if (!(newX > 0 && newX < 60 && newY > 0 && newY < 80))
+	if (!(newX > 0 && newX < 60 && newY > 0 && newY < 80) || (field.matrix[newX][newY].wall == true))
 	{
 		dir = { 0, 0 };
-		return;
+		return false;
 	}
+	
+
 	if (dir.y == 1)
 		crawler.moveRight();
 	else if (dir.y == -1)
@@ -54,6 +55,7 @@ void Controller::moveCrawler(Vector2i dir)
 	else if (dir.x == -1)
 		crawler.moveUp();
 	dir = { 0, 0 };
+	return true;
 }
 
 void Controller::exit()
