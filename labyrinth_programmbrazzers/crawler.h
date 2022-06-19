@@ -16,5 +16,5 @@ public:
 	void moveRight();
 	
 	void updateHead();
-	
+	//bool chw
 };

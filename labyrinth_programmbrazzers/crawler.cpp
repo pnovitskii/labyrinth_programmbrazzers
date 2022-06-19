@@ -7,7 +7,10 @@ Crawler::Crawler()
 
 	head_s.setPosition((float)position.y * 10, (float)position.x * 10);
 }
-
+//bool CrawlercheckMove(Vector2i dir)
+//{
+//
+//}
 void Crawler::moveUp()
 {
 	

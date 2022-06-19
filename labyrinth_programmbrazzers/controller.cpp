@@ -1,5 +1,29 @@
 #include "controller.h"
+#include <functional>
+class Node {
+	vector<Node*> next;
+	Node* prev = NULL;
+	int x = 0;
+	int y = 0;
+public:
+	Node(int x, int y, Node* prev)
+	{
+		this->x = x;
+		this->y = y;
+		this->prev = prev;
+	}
+};
+class List {
+	Node* start = NULL;// new  Node(1, 0, NULL);
+public:
+	List(Node* start)
+	{
+		this->start = start;
+	}
+	/*void push(int x, int y, Node* prev) {
 
+	}*/
+};
 Controller::Controller()
 {
 	window.create(VideoMode(810, 610), "Labyrinth");
@@ -57,7 +81,44 @@ bool Controller::moveCrawler(Vector2i dir)
 	dir = { 0, 0 };
 	return true;
 }
+void Controller::find()
+{
+	//List list;
+	/*function<bool()> check ;
+	function<bool()> go;*/
+	cout << strategy.go << endl;
+	Vector2i check;
+	Vector2i go;
+	if (strategy.go == 0) {
+		check = { 1, 0 };
+		go = { 0, 1 };
+	}
+	else if (strategy.go == 1) {
+		check = { 0, -1 };
+		go = { 1, 0 };
+	}
+	else if (strategy.go == 2) {
+		check = { -1, 0 };
+		go = { 0 , -1 };
+	}
+	else if (strategy.go == 3) {
+		check = { 0, 1 };
+		go = { -1, 0 };
+	}
 
+	if (moveCrawler(check))
+	{
+		strategy.go = (strategy.go + 1) % 4;
+		return;
+	}
+	else if (!moveCrawler(go))
+	{
+		if (strategy.go == 0)
+			strategy.go = 3;
+		else
+			strategy.go -= 1;
+	}  
+}
 void Controller::exit()
 {
 	window.close();

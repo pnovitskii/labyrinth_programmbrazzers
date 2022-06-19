@@ -6,6 +6,7 @@
 #include "controller.h"
 #include <time.h>
 #include <cstdlib>
+#include "dirActionCreator.hpp"
 using namespace std;
 int dx = 1;
 int dy = 0;
@@ -35,29 +36,30 @@ int main()
             if (event.type == Event::KeyPressed)
             {
                 if (event.key.code == Keyboard::W)
-                    a.moveCrawler({ -1, 0 });
+                    a.moveCrawler(a.actions.UpActionCreator());
                     //a.crawler.moveUp();
                 if (event.key.code == Keyboard::A)
-                    a.moveCrawler({ 0, -1 });
+                    a.moveCrawler(a.actions.LeftActionCreator());
                     //a.crawler.moveLeft();
                 if (event.key.code == Keyboard::S)
-                    a.moveCrawler({ 1, 0 });
+                    a.moveCrawler(a.actions.DownActionCreator());
                     //a.crawler.moveDown();
                 if (event.key.code == Keyboard::D)
-                    a.moveCrawler({ 0, 1 });
+                    a.moveCrawler(a.actions.RightActionCreator());
                     //a.crawler.moveRight();
                 if (event.key.code == Keyboard::Space) 
                 {
+                    a.find();
                     //  1  0 down
                     // -1  0 up
                     //  0 -1 left
                     //  0  1 right
-                    for (int i = 0; i < 100000/2; i++)
-                    {
-                        d = cases[0][rand() % 5];
-                        a.moveCrawler(d);
-                        a.updateCrawler();
-                    }
+                    //for (int i = 0; i < 100000/2; i++)
+                    //{
+                        //d = cases[0][rand() % 5];
+                        //a.moveCrawler(d);
+                        //a.updateCrawler();
+                    //}
                     /*if (a.moveCrawler(d))
                     {
                         
