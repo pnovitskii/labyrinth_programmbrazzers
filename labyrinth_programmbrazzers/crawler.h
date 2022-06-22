@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include "field.h"
 using namespace sf;
 class Crawler
 {
@@ -14,7 +14,8 @@ public:
 	void moveLeft();
 	void moveDown();
 	void moveRight();
-	
+	//bool move(Vector2i dir);
+	Vector2i move(Vector2i dir, Field &field);
 	void updateHead();
 	//bool chw
 };

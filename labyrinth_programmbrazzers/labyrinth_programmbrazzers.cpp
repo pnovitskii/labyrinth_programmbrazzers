@@ -49,7 +49,8 @@ int main()
                     //a.crawler.moveRight();
                 if (event.key.code == Keyboard::Space) 
                 {
-                    a.find();
+                    a.step();
+                    //a.find();
                     //  1  0 down
                     // -1  0 up
                     //  0 -1 left

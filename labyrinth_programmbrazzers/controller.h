@@ -19,7 +19,7 @@ class RightHand : Strategy {
 public:
 	//int str[4] = { 0, 1, 2, 3 };
 	int go = 0;
-	void step(){
+	Vector2i step(Field &field, Crawler &crawler);// {
 		/*Vector2i check;
 		Vector2i go;
 		if (this->go == 0) {
@@ -51,7 +51,7 @@ public:
 			else
 				this->go -= 1;
 		}*/
-	}
+	//}
 };
 
 class Controller
@@ -74,8 +74,7 @@ public:
 	void updateCrawler();
 	//void setDir(Vector2i d);
 	bool moveCrawler(Vector2i dir);
-	void step() {
-		
-	};
-	void find();
+	void step();
+	
+	Vector2i find();
 };
