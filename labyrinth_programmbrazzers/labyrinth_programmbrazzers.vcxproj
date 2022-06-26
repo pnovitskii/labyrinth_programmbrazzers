@@ -147,7 +147,7 @@
     <ClCompile Include="field.cpp" />
     <ClCompile Include="labyrinth_programmbrazzers.cpp" />
     <ClCompile Include="left_hand.cpp" />
-    <ClCompile Include="dirActionCreator.hpp" />
+    <ClCompile Include="rightHand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.h" />
@@ -155,6 +155,7 @@
     <ClInclude Include="crawler.h" />
     <ClInclude Include="field.h" />
     <ClInclude Include="left_hand.h" />
+    <ClInclude Include="rightHand.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

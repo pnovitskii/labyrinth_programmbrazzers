@@ -1,24 +1,24 @@
 #include "controller.h"
-#include "left_hand.h"
-Vector2i LeftHand::step(Field& field, Crawler& crawler)
+#include "rightHand.h"
+Vector2i RightHand::step(Field& field, Crawler& crawler)
 {
 	Vector2i check;
 	Vector2i go;
 	if (this->go == 0) {
 		check = { 1, 0 };
-		go = { 0, -1 };
+		go = { 0, 1 };
 	}
-	else if (this->go == 3) {
+	else if (this->go == 1) {
 		check = { 0, -1 };
-		go = { -1, 0 };
+		go = { 1, 0 };
 	}
 	else if (this->go == 2) {
 		check = { -1, 0 };
-		go = { 0 , 1 };
+		go = { 0 , -1 };
 	}
-	else if (this->go == 1) {
+	else if (this->go == 3) {
 		check = { 0, 1 };
-		go = { 1, 0 };
+		go = { -1, 0 };
 	}
 
 	if (crawler.move(check, field) != Vector2i(-1, -1))

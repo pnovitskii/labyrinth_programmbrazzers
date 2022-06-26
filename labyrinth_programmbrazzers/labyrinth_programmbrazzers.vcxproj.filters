@@ -33,7 +33,7 @@
     <ClCompile Include="left_hand.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="dirActionCreator.hpp">
+    <ClCompile Include="rightHand.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -51,6 +51,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="left_hand.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="rightHand.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
