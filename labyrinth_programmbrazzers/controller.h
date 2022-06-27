@@ -16,7 +16,6 @@ public:
 	Vector2i RightActionCreator() { return(Vector2i(0, 1)); }
 };
 
-
 class Controller
 {
 public:

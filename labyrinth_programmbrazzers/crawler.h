@@ -17,5 +17,4 @@ public:
 	//bool move(Vector2i dir);
 	Vector2i move(Vector2i dir, Field &field);
 	void updateHead();
-	//bool chw
 };

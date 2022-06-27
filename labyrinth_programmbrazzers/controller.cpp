@@ -85,7 +85,7 @@ bool Controller::moveCrawler(Vector2i dir)
 void Controller::step()
 {
 	if (strategy == NULL) return;
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 1; i++) {
 		Vector2i newPosition = strategy->step(field, crawler);
 		cout << newPosition.x << " " << newPosition.y << endl;
 		updateCrawler();

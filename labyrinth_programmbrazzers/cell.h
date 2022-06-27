@@ -4,7 +4,6 @@ using namespace std;
 using namespace sf;
 class Cell
 {
-
 private:
 	Texture texture;
 public:
@@ -14,10 +13,7 @@ public:
 	Cell(){}
 	Cell(int x, int y)
 	{
-		
 		sprite.setPosition(x * 10, y * 10);
-		
 	}
-//public:
 	void init(int x, int y);
 };

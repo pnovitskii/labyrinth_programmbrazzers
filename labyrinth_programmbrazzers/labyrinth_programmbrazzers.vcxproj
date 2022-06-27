@@ -155,6 +155,7 @@
     <ClInclude Include="crawler.h" />
     <ClInclude Include="field.h" />
     <ClInclude Include="left_hand.h" />
+    <ClInclude Include="randomMouse.h" />
     <ClInclude Include="rightHand.h" />
   </ItemGroup>
   <ItemGroup>

@@ -8,13 +8,13 @@
 #include <cstdlib>
 #include "rightHand.h"
 #include "left_hand.h"
+#include "randomMouse.h"
 using namespace std;
 
 int main()
 {
     srand(time(NULL));
     Controller a;
-    //a.setStrategy(new RightHand);
     Clock clock;
     while (a.status())
     {
@@ -29,32 +29,24 @@ int main()
             {
                 if (event.key.code == Keyboard::W)
                     a.moveCrawler(a.actions.UpActionCreator());
-                    //a.crawler.moveUp();
                 if (event.key.code == Keyboard::A)
                     a.moveCrawler(a.actions.LeftActionCreator());
-                    //a.crawler.moveLeft();
                 if (event.key.code == Keyboard::S)
                     a.moveCrawler(a.actions.DownActionCreator());
-                    //a.crawler.moveDown();
                 if (event.key.code == Keyboard::D)
                     a.moveCrawler(a.actions.RightActionCreator());
-                    //a.crawler.moveRight();
                 if (event.key.code == Keyboard::Space) 
                     a.step();
                 if (event.key.code == Keyboard::Num1)
                     a.setStrategy(new RightHand);
                 if (event.key.code == Keyboard::Num2)
                     a.setStrategy(new LeftHand);
+                if (event.key.code == Keyboard::Num3)
+                    a.setStrategy(new RandomMouse);
             }
         }
-        
-            
-        
-        //a.moveCrawler();
         a.updateCrawler();
         a.draw();
-        //cout << a.field.matrix[a.crawler.position.x][a.crawler.position.y].wall << endl;
-        
     }
     return 0;
 }

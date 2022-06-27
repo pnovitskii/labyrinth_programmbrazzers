@@ -2,7 +2,6 @@
 #include <SFML/Graphics.hpp>
 #include "cell.h"
 using namespace sf;
-
 class Field
 {
 public:
@@ -11,8 +10,6 @@ public:
 	Image background_image;
 	Texture background_texture;
 	Sprite background_sprite;
-public:
-
 	Field();
 	void draw(RenderWindow& window);
 	void setPath(int x, int y);
